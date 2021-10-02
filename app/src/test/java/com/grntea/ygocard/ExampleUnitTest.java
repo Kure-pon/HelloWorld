@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.grntea.ygocard;
 
 import org.junit.Test;
 
