@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">YGO Card</string>
+    <string name="detail">CardType?, Race?, Effect?, Attribute?, Archetype?</string>
 </resources>

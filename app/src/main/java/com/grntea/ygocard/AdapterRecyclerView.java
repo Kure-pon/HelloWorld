@@ -1,5 +1,7 @@
 package com.grntea.ygocard;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,21 +17,35 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
 
     private final ArrayList<ItemModel> dataItem;
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView textHead;
         TextView textSubhead;
         ImageView imageIcon;
+        private final Context context;
 
-        ViewHolder(View v) {
-
+        public ViewHolder(View v) {
             super(v);
 
+            context = v.getContext();
             textHead = v.findViewById(R.id.text_headline);
             textSubhead = v.findViewById(R.id.text_subhead);
             imageIcon = v.findViewById(R.id.imageList);
-        }
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                    Intent intent = new Intent(v.getContext(),
+                            DetailActivity.class);
+                    v.getContext().startActivity(intent);
+                }}); }
+
     }
+
+
+
 
     AdapterRecyclerView(ArrayList<ItemModel> data) {
 
