@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="14dp"
+    android:paddingTop="8dp"
+    android:paddingRight="14dp"
+    android:paddingBottom="8dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageList"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <TextView
+        android:id="@+id/text_subhead"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toEndOf="@+id/imageList"
+        app:layout_constraintTop_toBottomOf="@+id/text_headline" />
+
+    <ImageView
+        android:id="@+id/imageList"
+        android:layout_width="104dp"
+        android:layout_height="154dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/card_back" />
+
+    <TextView
+        android:id="@+id/card_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="#3949AB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageList" />
+
+    <LinearLayout
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"></LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
