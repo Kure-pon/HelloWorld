@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Deck")
+@Entity(tableName = "Fav")
 public class Deck {
 
     @PrimaryKey(autoGenerate = true)

@@ -51,13 +51,12 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                     .putExtra("card",itemsModelListFiltered.get(position))
                                     .putExtra("image",card.getImage_url())
-                                    .putExtra("type",itemsModelListFiltered.get(0).getType())
 
                             ));
             holder.title.setText(itemsModelListFiltered.get(position).getName());
             holder.type.setText(itemsModelListFiltered.get(position).getType());
             holder.desc.setText(itemsModelListFiltered.get(position).getDesc());
-            Glide.with(context).load(card.getImage_url_small()).placeholder(R.drawable.card_back).into(holder.img);
+            Glide.with(context).load(card.getImage_url()).placeholder(R.drawable.card_back).into(holder.img);
         } catch (Exception e) {
             //Toast.makeText(context.getApplicationContext(), "No Card With This Name!!", Toast.LENGTH_SHORT).show();
         }
@@ -67,7 +66,7 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
 
     @Override
     public int getItemCount() {
-        return cardList.size();
+        return 20;
     }
 
     public void setList(List<card> cardList) {
@@ -75,7 +74,6 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
         this.itemsModelListFiltered = cardList;
         notifyDataSetChanged();
     }
-
 
     public card getCardList(int position) {
         return cardList.get(position);
@@ -113,13 +111,6 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
                 notifyDataSetChanged();
             }
         };
-
-    }
-
-    public void setData(List<card> data){
-        cardList.clear();
-        cardList.addAll(data);
-        notifyDataSetChanged();
 
     }
 

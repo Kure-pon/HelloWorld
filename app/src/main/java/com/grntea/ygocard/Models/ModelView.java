@@ -17,10 +17,10 @@ import io.reactivex.schedulers.Schedulers;
 public class ModelView extends ViewModel {
     private final Repository repository;
 
-    private LiveData<List<Deck>> Decklist = null;
+    private LiveData<List<Deck>> FavList = null;
 
-    public LiveData<List<Deck>> getDeckList() {
-        return Decklist;
+    public LiveData<List<Deck>> getFavList() {
+        return FavList;
     }
 
     private MutableLiveData<List<card>> cardMutableLiveData = new MutableLiveData<List<card>>();
@@ -46,7 +46,7 @@ public class ModelView extends ViewModel {
     }
 
     public void getFav() {
-        Decklist = repository.getDeck();
+        FavList = repository.getDeck();
     }
 
     public void SaveData(Deck f) {
