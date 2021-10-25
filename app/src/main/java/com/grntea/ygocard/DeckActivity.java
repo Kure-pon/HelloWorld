@@ -40,7 +40,7 @@ public class DeckActivity extends AppCompatActivity {
 
         modelView = new ViewModelProvider(this).get(ModelView.class);
         modelView.getFav();
-        modelView.getFavList().observe(this, favs -> {
+        modelView.getDeckList().observe(this, favs -> {
             if (favs.size() == 0) {
                 findViewById(R.id.nodatafound).setVisibility(View.VISIBLE);
                 textView.setText("Your Deck is Empty");

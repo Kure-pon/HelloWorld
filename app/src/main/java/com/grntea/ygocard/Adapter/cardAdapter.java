@@ -56,7 +56,7 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
             holder.title.setText(itemsModelListFiltered.get(position).getName());
             holder.type.setText(itemsModelListFiltered.get(position).getType());
             holder.desc.setText(itemsModelListFiltered.get(position).getDesc());
-            Glide.with(context).load(card.getImage_url()).placeholder(R.drawable.card_back).into(holder.img);
+            Glide.with(context).load(card.getImage_url_small()).placeholder(R.drawable.card_back).into(holder.img);
         } catch (Exception e) {
             //Toast.makeText(context.getApplicationContext(), "No Card With This Name!!", Toast.LENGTH_SHORT).show();
         }
@@ -66,7 +66,7 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
 
     @Override
     public int getItemCount() {
-        return 20;
+        return cardList.size();
     }
 
     public void setList(List<card> cardList) {
