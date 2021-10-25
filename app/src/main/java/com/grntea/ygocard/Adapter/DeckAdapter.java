@@ -19,7 +19,7 @@ import java.util.List;
 
 import io.reactivex.annotations.NonNull;
 
-public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.FavAdapterHolder> {
+public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.DeckAdapterHolder> {
 
     private List<Deck> deckList = new ArrayList<>();
     private final Context context;
@@ -30,18 +30,18 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.FavAdapterHold
 
     @NonNull
     @Override
-    public FavAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new FavAdapterHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.card_list, parent, false));
+    public DeckAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new DeckAdapterHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.card_list, parent, false));
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FavAdapterHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DeckAdapterHolder holder, int position) {
         holder.title.setText(deckList.get(position).getCard().getName());
         holder.type.setText(deckList.get(position).getCard().getType());
         holder.desc.setText(deckList.get(position).getCard().getDesc());
         cardImage card = deckList.get(position).getCard().getCardImageList().get(0);
-        Glide.with(context).load(card.getImage_url()).placeholder(R.drawable.card_back).into(holder.img);
+        Glide.with(context).load(card.getImage_url_small()).placeholder(R.drawable.card_back).into(holder.img);
 
     }
 
@@ -59,12 +59,12 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.FavAdapterHold
         return deckList.get(position);
     }
 
-    public class FavAdapterHolder extends RecyclerView.ViewHolder {
+    public class DeckAdapterHolder extends RecyclerView.ViewHolder {
 
         TextView title, desc, type;
         ImageView img;
 
-        public FavAdapterHolder(View itemView) {
+        public DeckAdapterHolder(View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.text_headline);
             type = itemView.findViewById(R.id.card_type);
