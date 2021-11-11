@@ -17,10 +17,10 @@ public class DbModule {
 
     @Provides
     @Singleton
-    public static DoaDB ProvideDb(Application application){
+    public static DaoDB ProvideDb(Application application){
         return Room.databaseBuilder(
                 application
-                , DoaDB.class
+                , DaoDB.class
                 ,"DoaDB")
                 .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
@@ -30,7 +30,7 @@ public class DbModule {
 
     @Provides
     @Singleton
-    public static Doa ProvideDao(DoaDB doaDB){
-        return doaDB.doa();
+    public static Dao ProvideDao(DaoDB daoDB){
+        return daoDB.doa();
     }
 }

@@ -8,6 +8,6 @@ import com.grntea.ygocard.Models.Deck;
 
 @Database(entities = {Deck.class}, version = 5)
 @TypeConverters(Converters.class)
-public abstract class DoaDB extends RoomDatabase {
-    public abstract Doa doa();
+public abstract class DaoDB extends RoomDatabase {
+    public abstract Dao doa();
 }
