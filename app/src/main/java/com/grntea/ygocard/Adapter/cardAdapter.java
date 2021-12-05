@@ -51,6 +51,7 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                     .putExtra("card",itemsModelListFiltered.get(position))
                                     .putExtra("image",card.getImage_url())
+                                    .putExtra("type",itemsModelListFiltered.get(0).getType())
 
                             ));
             holder.title.setText(itemsModelListFiltered.get(position).getName());
@@ -74,6 +75,7 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
         this.itemsModelListFiltered = cardList;
         notifyDataSetChanged();
     }
+
 
     public card getCardList(int position) {
         return cardList.get(position);
@@ -111,6 +113,13 @@ public class cardAdapter extends RecyclerView.Adapter<cardAdapter.cardAdapterHol
                 notifyDataSetChanged();
             }
         };
+
+    }
+
+    public void setData(List<card> data){
+        cardList.clear();
+        cardList.addAll(data);
+        notifyDataSetChanged();
 
     }
 
