@@ -51,4 +51,3 @@
         app:srcCompat="@drawable/ic_sharp_assignment_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
