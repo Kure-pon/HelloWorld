@@ -17,6 +17,15 @@ import com.grntea.ygocard.Adapter.cardAdapter;
 import com.grntea.ygocard.Models.Deck;
 import com.grntea.ygocard.Models.ModelView;
 import com.grntea.ygocard.Models.card;
+import com.grntea.ygocard.Models.data;
+import com.grntea.ygocard.Retrofit.ApiClient;
+
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import java.util.List;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -57,9 +66,23 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                ApiClient.ApiClient().getQuery(newText)
+                        .enqueue(new Callback<data>() {
+                            @Override
+                            public void onResponse(Call<data> call, Response<data> response) {
+                                if (response.isSuccessful()){
+                                    List<card> results = response.body().getCards();
+                                    cardAdapter.setData(results);
+                                }
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<data> call, Throwable t) {
+
+                            }
+                        });
                 Log.e("Main", " data search " + newText);
-                cardAdapter.getFilter().filter(newText);
-                cardAdapter.notifyDataSetChanged();
                 return true;
             }
         });
