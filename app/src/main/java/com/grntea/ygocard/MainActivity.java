@@ -106,4 +106,5 @@ public class MainActivity extends AppCompatActivity {
         };
         new ItemTouchHelper(touchHelper).attachToRecyclerView(RecyclerViewCard);
     }
+
 }
