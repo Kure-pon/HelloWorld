@@ -1,6 +1,8 @@
 package com.grntea.ygocard;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,27 +38,28 @@ public class DetailActivity extends AppCompatActivity {
                     stat.setText(stat1);
                     atr.setText(card.getAttribute());
                     atr1 = atr.getText().toString();
-                    Toast.makeText(getApplicationContext(), stat1, Toast.LENGTH_SHORT).show();
-                    if ("DARK".equals(atr1)){
-                        imgatr.setImageResource(R.drawable.dark);
-                    }
-                    else if ("DIVINE".equals(atr1)){
-                        imgatr.setImageResource(R.drawable.divine);
-                    }
-                    else if ("EARTH".equals(atr1)){
-                        imgatr.setImageResource(R.drawable.earth);
-                    }
-                    else if ("FIRE".equals(atr1)){
-                        imgatr.setImageResource(R.drawable.fire);
-                    }
-                    else if ("LIGHT".equals(atr1)){
-                        imgatr.setImageResource(R.drawable.light);
-                    }
-                    else if ("WATER".equals(atr1)){
-                        imgatr.setImageResource(R.drawable.water);
-                    }
-                    else if ("WIND".equals(atr1)){
-                        imgatr.setImageResource(R.drawable.wind);
+                    switch (atr1) {
+                        case "DARK":
+                            imgatr.setImageResource(R.drawable.dark);
+                            break;
+                        case "DIVINE":
+                            imgatr.setImageResource(R.drawable.divine);
+                            break;
+                        case "EARTH":
+                            imgatr.setImageResource(R.drawable.earth);
+                            break;
+                        case "FIRE":
+                            imgatr.setImageResource(R.drawable.fire);
+                            break;
+                        case "LIGHT":
+                            imgatr.setImageResource(R.drawable.light);
+                            break;
+                        case "WATER":
+                            imgatr.setImageResource(R.drawable.water);
+                            break;
+                        case "WIND":
+                            imgatr.setImageResource(R.drawable.wind);
+                            break;
                     }
 
                     switch (race1) {
@@ -233,5 +236,34 @@ public class DetailActivity extends AppCompatActivity {
         imgspell = findViewById(R.id.image_spell);
         stat = findViewById(R.id.stat);
         atr = findViewById(R.id.atr_detail);
+    }
+
+
+    public void typeintent(View view) {
+        Intent myIntent = new Intent(DetailActivity.this, MainActivity.class);
+        myIntent.putExtra("type", type1)
+                .putExtra("key", "1"); //Optional parameters
+        DetailActivity.this.startActivity(myIntent);
+    }
+
+    public void raceintent(View view) {
+        Intent myIntent = new Intent(DetailActivity.this, MainActivity.class);
+        if("Spell Card".equals(type1)||"Trap Card".equals(type1)){
+            myIntent.putExtra("type", type1)
+                    .putExtra("race", race1)
+                    .putExtra("key", "2"); //Optional parameters
+        }else{
+
+            myIntent.putExtra("race", race1)
+                    .putExtra("key", "3"); //Optional parameters
+        }
+        DetailActivity.this.startActivity(myIntent);
+    }
+
+    public void atrintent(View view) {
+        Intent myIntent = new Intent(DetailActivity.this, MainActivity.class);
+        myIntent.putExtra("atr", atr1)
+                .putExtra("key", "4"); //Optional parameters
+        DetailActivity.this.startActivity(myIntent);
     }
 }

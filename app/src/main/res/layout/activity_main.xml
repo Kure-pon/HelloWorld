@@ -19,9 +19,11 @@
 
     <SearchView
         android:id="@+id/searchV"
-        android:layout_width="342dp"
+        android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="85dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -49,5 +51,16 @@
         app:layout_constraintEnd_toEndOf="@+id/recycler"
         app:rippleColor="#FFFFFF"
         app:srcCompat="@drawable/ic_sharp_assignment_24" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="37dp"
+        android:layout_height="42dp"
+        app:layout_constraintBottom_toBottomOf="@+id/searchV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/searchV"
+        app:layout_constraintTop_toTopOf="@+id/searchV"
+        app:srcCompat="@drawable/refresh"
+        android:onClick="refresh"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

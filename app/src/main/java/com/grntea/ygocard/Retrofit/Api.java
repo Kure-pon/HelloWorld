@@ -16,4 +16,51 @@ public interface Api {
     Call<data> getQuery(
             @Query("fname") String fname
     );
+
+    @GET("cardinfo.php")
+    Call<data> getatr(
+            @Query("attribute") String atr
+    );
+
+    @GET("cardinfo.php")
+    Call<data> getrace(
+            @Query("race") String race
+    );
+
+    @GET("cardinfo.php")
+    Call<data> gettype(
+            @Query("type") String type
+    );
+
+    @GET("cardinfo.php")
+    Call<data> getracespell(
+            @Query("type") String type,
+            @Query("race") String race
+    );
+
+    @GET("cardinfo.php")
+    Call<data> queatr(
+            @Query("fname") String fname,
+            @Query("attribute") String atr
+    );
+
+    @GET("cardinfo.php")
+    Call<data> querace(
+            @Query("fname") String fname,
+            @Query("race") String race
+    );
+
+    @GET("cardinfo.php")
+    Call<data> quetype(
+            @Query("fname") String fname,
+            @Query("type") String type
+    );
+
+    @GET("cardinfo.php")
+    Call<data> queracespell(
+            @Query("fname") String fname,
+            @Query("type") String type,
+            @Query("race") String race
+    );
+
 }

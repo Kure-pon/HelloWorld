@@ -35,7 +35,9 @@
         android:layout_toEndOf="@+id/image_type"
         android:layout_toRightOf="@+id/image_type"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/Title_detail"
+        android:onClick="typeintent"
+        android:clickable="true"/>
 
     <TextView
         android:id="@+id/race_detail"
@@ -48,7 +50,9 @@
         android:layout_toEndOf="@+id/image_spell"
         android:layout_toRightOf="@+id/image_spell"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/Title_detail"
+        android:onClick="raceintent"
+        android:clickable="true"/>
 
     <TextView
         android:id="@+id/atr_detail"
@@ -60,7 +64,9 @@
         android:layout_toEndOf="@+id/image_atr"
         android:layout_toRightOf="@+id/image_atr"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/Title_detail"
+        android:onClick="atrintent"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/image_detail"
