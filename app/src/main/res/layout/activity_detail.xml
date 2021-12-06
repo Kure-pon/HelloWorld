@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:layout_marginBottom="10dp">
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent">
@@ -26,10 +27,38 @@
         android:id="@+id/type_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_alignTop="@+id/image_type"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/Title_detail"
+        android:layout_toEndOf="@+id/image_type"
+        android:layout_toRightOf="@+id/image_type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title_detail" />
+
+    <TextView
+        android:id="@+id/race_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/type_detail"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/image_spell"
+        android:layout_toRightOf="@+id/image_spell"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title_detail" />
+
+    <TextView
+        android:id="@+id/atr_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/type_detail"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/image_atr"
+        android:layout_toRightOf="@+id/image_atr"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title_detail" />
 
@@ -37,8 +66,49 @@
         android:id="@+id/image_detail"
         android:layout_width="match_parent"
         android:layout_height="373dp"
-        android:layout_below="@+id/type_detail"
-        android:layout_marginTop="14dp"
+        android:layout_below="@+id/image_type"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_detail"
+        tools:srcCompat="@drawable/card_back" />
+
+    <ImageView
+        android:id="@+id/image_type"
+        android:layout_width="17dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/Title_detail"
+        android:layout_alignStart="@+id/Title_detail"
+        android:layout_alignLeft="@+id/Title_detail"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_detail"
+        tools:srcCompat="@drawable/card_back" />
+
+    <ImageView
+        android:id="@+id/image_atr"
+        android:layout_width="17dp"
+        android:layout_height="25dp"
+        android:layout_alignTop="@+id/image_type"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/type_detail"
+        android:layout_toRightOf="@+id/type_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_detail"
+        tools:srcCompat="@drawable/card_back" />
+
+    <ImageView
+        android:id="@+id/image_spell"
+        android:layout_width="17dp"
+        android:layout_height="25dp"
+        android:layout_alignTop="@+id/image_type"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/atr_detail"
+        android:layout_toRightOf="@+id/atr_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/type_detail"
@@ -48,13 +118,25 @@
         android:id="@+id/desc_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/image_detail"
+        android:layout_below="@+id/stat"
         android:layout_alignParentBottom="true"
-        android:text="Description"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_detail" />
+
+    <TextView
+        android:id="@+id/stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_detail"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
   </RelativeLayout>
 </ScrollView>

@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">YGO Card</string>
     <string name="detail">CardType?, Race?, Effect?, Attribute?, Archetype?</string>
+
+    <string-array name="card_type">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Other</item>
+    </string-array>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -20,17 +20,15 @@ import com.grntea.ygocard.Models.card;
 import com.grntea.ygocard.Models.data;
 import com.grntea.ygocard.Retrofit.ApiClient;
 
+import java.util.List;
 
+import dagger.hilt.android.AndroidEntryPoint;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import java.util.List;
-
-import dagger.hilt.android.AndroidEntryPoint;
-
 @AndroidEntryPoint
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     public ModelView modelView;
     public RecyclerView RecyclerViewCard;
@@ -106,5 +104,4 @@ public class MainActivity extends AppCompatActivity {
         };
         new ItemTouchHelper(touchHelper).attachToRecyclerView(RecyclerViewCard);
     }
-
 }
